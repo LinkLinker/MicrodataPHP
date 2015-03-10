@@ -145,6 +145,10 @@ class MicrodataPhpDOMElement extends \DOMElement {
         if (!empty($datetime))
           return $datetime;
       default:
+        $content = $this->getAttribute('content');
+        if ($content) {
+            return $content;
+        }
         return $this->textContent;
     }
   }
